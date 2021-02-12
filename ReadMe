@@ -1,0 +1,21 @@
+Snippet App Details
+Technology: Java Spring Boot
+The choice of Java Spring Boot is because it is a module ofo Spring framework that allows us to build stand alone
+application with minimal or zero configuration, it aims at shortening code length, it also reduces boiler plate code
+it also offers embedded server, it offers in memory database such as H2
+
+Context path: /snippet
+Server Port : 8089
+Post URL: http://localhost:8089/snippet/create
+PUT URL : http://localhost:8089/snippet/edit
+
+Request Json Model (used for post and put method):
+{
+	"name": "Test",
+	"expiryDate" : "5",
+	"snippet" : "My Test Snippet"
+}
+
+expiryDate variable is an integer because it will be used to set the LocalDateTime from Java 8 lib to update the expiry seconds.
+In the SnippetModel, i set expiry date as a method, and i have a method to set if its valid depending on the time range.
+The boolean isValid helps to determine a valid url.
